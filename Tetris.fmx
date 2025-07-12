@@ -12,24 +12,45 @@ object FormTetrisGame: TFormTetrisGame
   OnCreate = FormCreate
   DesignerMasterStyle = 0
   object ButtonDrop: TButton
-    Position.X = 16.000000000000000000
-    Position.Y = 680.000000000000000000
+    Position.X = 40.000000000000000000
+    Position.Y = 664.000000000000000000
     Size.Width = 57.000000000000000000
-    Size.Height = 25.000000000000000000
+    Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     Text = 'Drop'
     TextSettings.Trimming = None
     OnClick = ButtonDropClick
     object ButtonRoter: TButton
-      Position.X = 72.000000000000000000
+      Position.X = 88.000000000000000000
       Size.Width = 57.000000000000000000
-      Size.Height = 25.000000000000000000
+      Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'Rot'#233'r'
       TextSettings.Trimming = None
       OnClick = ButtonRoterClick
+    end
+  end
+  object ButtonLeft: TButton
+    Position.X = 216.000000000000000000
+    Position.Y = 664.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Venstre'
+    TextSettings.Trimming = None
+    OnClick = ButtonLeftClick
+    object ButtonRight: TButton
+      Position.X = 104.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'H'#248'yre'
+      TextSettings.Trimming = None
+      OnClick = ButtonRightClick
     end
   end
 end

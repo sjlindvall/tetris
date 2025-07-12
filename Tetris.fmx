@@ -2,8 +2,8 @@ object FormTetrisGame: TFormTetrisGame
   Left = 0
   Top = 0
   Caption = 'Tetris'
-  ClientHeight = 720
-  ClientWidth = 640
+  ClientHeight = 632
+  ClientWidth = 432
   Position = DesktopCenter
   FormStyle = StayOnTop
   FormFactor.Width = 320
@@ -12,8 +12,8 @@ object FormTetrisGame: TFormTetrisGame
   OnCreate = FormCreate
   DesignerMasterStyle = 0
   object ButtonDrop: TButton
-    Position.X = 40.000000000000000000
-    Position.Y = 664.000000000000000000
+    Position.X = 28.000000000000000000
+    Position.Y = 592.000000000000000000
     Size.Width = 57.000000000000000000
     Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
@@ -34,7 +34,7 @@ object FormTetrisGame: TFormTetrisGame
   end
   object ButtonLeft: TButton
     Position.X = 216.000000000000000000
-    Position.Y = 664.000000000000000000
+    Position.Y = 592.000000000000000000
     Size.Width = 80.000000000000000000
     Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
@@ -43,7 +43,7 @@ object FormTetrisGame: TFormTetrisGame
     TextSettings.Trimming = None
     OnClick = ButtonLeftClick
     object ButtonRight: TButton
-      Position.X = 104.000000000000000000
+      Position.X = 88.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False

@@ -48,6 +48,9 @@ type
 
 const
   BLOCK_SIZE = 30;
+  LIMIT_LEFT = BLOCK_SIZE;
+  LIMIT_RIGHT = BLOCK_SIZE*10;
+  LIMIT_BOTTOM = BLOCK_SIZE*20;
 
 var
   FormTetrisGame: TFormTetrisGame;
@@ -88,7 +91,7 @@ begin
   Rect.Width := 30;
   Rect.Height := 30;
   Rect.Position.X := 10;
-  Rect.Position.Y := 100;
+  Rect.Position.Y := 40;
 
   Rect.Fill.Color := TAlphaColorRec.Skyblue;     // Lysere blå gir mer liv
   Rect.Stroke.Color := TAlphaColorRec.Navy;      // Mørk blå gir kontrast
@@ -103,7 +106,7 @@ begin
   Rect.Fill.Gradient.StopPosition.X := 1;
   Rect.Fill.Gradient.StopPosition.Y := 1;
 
-  theShape := CreateShape(TShape.Z, 100,100, TRotation.R0);
+  theShape := CreateShape(TShape.Z, 60,10, TRotation.R0);
   theShape.RotationCenter.X := 0.5;
   theShape.RotationCenter.Y := 0.5;
 
@@ -130,8 +133,8 @@ end;
 procedure TFormTetrisGame.FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
 begin
   case Key of
-    vkLeft:  theShape.Position.X := theShape.Position.X - BLOCK_SIZE;
-    vkRight: theShape.Position.X := theShape.Position.X + BLOCK_SIZE;
+    vkLeft:  ButtonLeftClick(Sender); {theShape.Position.X := theShape.Position.X - BLOCK_SIZE;}
+    vkRight: ButtonRightClick(Sender); {theShape.Position.X := theShape.Position.X + BLOCK_SIZE;}
     vkUp:    DoRotation;
     vkDown:  theShape.Position.Y := theShape.Position.Y + BLOCK_SIZE;
   end;
@@ -144,12 +147,18 @@ end;
 
 procedure TFormTetrisGame.ButtonLeftClick(Sender: TObject);
 begin
-  theShape.Position.X := theShape.Position.X - BLOCK_SIZE;
+  if theShape.Position.X > LIMIT_LEFT then
+  begin
+    theShape.Position.X := theShape.Position.X - BLOCK_SIZE;
+  end;
 end;
 
 procedure TFormTetrisGame.ButtonRightClick(Sender: TObject);
 begin
-  theShape.Position.X := theShape.Position.X + BLOCK_SIZE;
+  if theShape.Position.X < LIMIT_RIGHT then
+  begin
+    theShape.Position.X := theShape.Position.X + BLOCK_SIZE;
+  end;
 end;
 
 procedure TFormTetrisGame.ButtonRoterClick(Sender: TObject);
